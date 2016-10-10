@@ -41,6 +41,7 @@
                     'biz.telephone.call',
                     'biz.ding.post']
             });
+            alert("agentId:"+agentId+"corpId:"+corpId);
             dd.ready(function(){
                 alert("dd ready22");
 //                $.ajax({
@@ -55,19 +56,19 @@
 //                        alert(JSON.stringify(data));
 //                    }
 //                })
-//                dd.runtime.info({
-//                    onSuccess: function(result) {
-//
-//                        console.log(JSON.stringify(result));
-//                        alert(JSON.stringify(result));
-//                    },
-//                    onFail : function(err) {
-//                        alert(JSON.stringify(err));
-//
-//
-//                    }
-//
-//                });
+                dd.runtime.info({
+                    onSuccess: function(result) {
+
+                        console.log(JSON.stringify(result));
+                        alert(JSON.stringify(result));
+                    },
+                    onFail : function(err) {
+                        alert(JSON.stringify(err));
+
+
+                    }
+
+                });
 
 //                获取免登授权码
                 dd.runtime.permission.requestAuthCode({
