@@ -41,6 +41,16 @@
 <script type="text/javascript">
     //            "access_token":"5d2ad2a4151b3a108123e45f331e6560"
     //文档见http://open.dingtalk.com/doc/#权限验证配置-beta
+    var apiUrl = "https://oapi.dingtalk.com/";
+    $.ajax({
+        url:apiUrl+"department/list",
+        type:'GET',
+        data:{access_token:"5d2ad2a4151b3a108123e45f331e6560"},
+        dataType:"json",
+        success:function(data){
+            alert(data.department[0].name);
+        }
+    });
     dd.config({
         agentId: '43790978', // 必填，微应用ID
         corpId: 'ding837885825c9bc4b3',//必填，企业ID
