@@ -210,7 +210,7 @@
 			return levelName;
 		},
 		go:function(page,taskId,taskType){
-			alert("g0");
+			alert(location.pathname);
 			var that = this;
 			if(page=='add'){
 				//这里替换为对应的页面url
