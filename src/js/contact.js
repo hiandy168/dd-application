@@ -10,7 +10,7 @@
 		data:{access_token:"5d2ad2a4151b3a108123e45f331e6560"},
 		dataType:"json",
 		success:function(data){
-			alert(data);
+			alert(data.department[0].name);
 		}
 	});
 	//模拟数据
