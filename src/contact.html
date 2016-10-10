@@ -44,17 +44,41 @@
             });
             dd.ready(function(){
                 alert("dd ready");
-                $.ajax({
-                    url:apiUrl+'department/list',
-                    dataType:'json',
-                    data:{access_token:access_token},
-                    type:'GET',
-                    success:function(data){
-                        alert(data.department[0].name);
+//                $.ajax({
+//                    url:apiUrl+'department/list',
+//                    dataType:'json',
+//                    data:{access_token:access_token},
+//                    type:'GET',
+//                    success:function(data){
+//                        alert(data.department[0].name);
+//                    },
+//                    error:function(data){
+//                        alert(JSON.stringify(data));
+//                    }
+//                })
+                dd.runtime.info({
+                    onSuccess: function(result) {
+                        /*{
+                         ability: '0.0.2' //容器版本，用来标识JSAPI能力，可根据该版本来决定能否使用jsapi
+                         }*/
+                        console.log(JSON.stringify(result));
                     },
-                    error:function(data){
-                        alert(JSON.stringify(data));
+                    onFail : function(err) {
+
+
                     }
+
+                });
+//                获取免登授权码
+                dd.runtime.permission.requestAuthCode({
+                    corpId: corpId,
+                    onSuccess: function(result) {
+                        /*{
+                         code: 'hYLK98jkf0m' //string authCode
+                         }*/
+                    },
+                    onFail : function(err) {}
+
                 })
             })
             dd.error(function(err) {
