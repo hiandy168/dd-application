@@ -20,10 +20,7 @@
         <script src="//g.alicdn.com/ilw/ding/0.6.2/scripts/dingtalk.js"></script>
         <script src="./js/fastclick.js"></script>
         <script src="./js/config.js"></script>
-        <script src="./js/common.js"></script>
         <script type="text/javascript">
-//            getTicket();
-
             dd.config({
                 agentId: agentId,
                 corpId: corpId,
@@ -58,19 +55,19 @@
 //                        alert(JSON.stringify(data));
 //                    }
 //                })
-                dd.runtime.info({
-                    onSuccess: function(result) {
-
-                        console.log(JSON.stringify(result));
-                        alert(JSON.stringify(result));
-                    },
-                    onFail : function(err) {
-                        alert(JSON.stringify(err));
-
-
-                    }
-
-                });
+//                dd.runtime.info({
+//                    onSuccess: function(result) {
+//
+//                        console.log(JSON.stringify(result));
+//                        alert(JSON.stringify(result));
+//                    },
+//                    onFail : function(err) {
+//                        alert(JSON.stringify(err));
+//
+//
+//                    }
+//
+//                });
 //                获取免登授权码
                 dd.runtime.permission.requestAuthCode({
                     corpId: corpId,
