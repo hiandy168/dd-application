@@ -69,7 +69,11 @@
 		getTargetUrl:function(replaceUrl,targetUrl){
 			var protocol = location.protocol;
 			var host = location.host;
+			if(location.pathname.indexOf(".html")<0){
+				location.pathname = location.pathname+'index.html';
+			}
 			var pathname = location.pathname.replace(replaceUrl,targetUrl);
+
 			return protocol+'//'+host+pathname;
 		}
 
@@ -210,7 +214,6 @@
 			return levelName;
 		},
 		go:function(page,taskId,taskType){
-			alert(location.pathname);
 			var that = this;
 			if(page=='add'){
 				//这里替换为对应的页面url
