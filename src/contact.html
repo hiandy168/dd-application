@@ -15,31 +15,42 @@
         <link rel="stylesheet" href="./css/task.css"/>
     </head>
     <body>
-        <div class="doc">
-            <div class="task-list">
-                <section class="itemlist" id="todolist">
-                    <header class="hd">department/list 获取部门列表GET<span></span></header>
-                    <div class="bd">
-                    </div>
-                </section>
 
-            </div>
-        </div>
         <script src="//g.alicdn.com/ilw/cdnjs/jquery/2.1.4/jquery.min.js"></script>
         <script src="//g.alicdn.com/ilw/ding/0.6.2/scripts/dingtalk.js"></script>
         <script src="./js/fastclick.js"></script>
         <script type="text/javascript">
-//            "access_token":"5d2ad2a4151b3a108123e45f331e6560"
-            //文档见http://open.dingtalk.com/doc/#权限验证配置-beta
-             dd.config({
-                agentId: '43790978', // 必填，微应用ID
-                corpId: 'ding837885825c9bc4b3',//必填，企业ID
-                timeStamp:'1440678945' , // 必填，生成签名的时间戳
-                nonceStr: 'abcdefg', // 必填，生成签名的随机串
-                signature: '750d0719eeb810f6fa12b04d87d0d7789c4bc64f', // 必填，签名
-                jsApiList: ['ui.pullToRefresh.enable','ui.pullToRefresh.stop','biz.util.openLink','biz.navigation.setLeft','biz.navigation.setTitle','biz.navigation.setRight'] // 必填，需要使用的jsapi列表
+            var corpId = "ding837885825c9bc4b3";
+            dd.config({
+                agentId: '43790978',
+                corpId: corpId,
+                timeStamp: '1440678945',
+                nonceStr: 'abcdefg',
+                signature: '750d0719eeb810f6fa12b04d87d0d7789c4bc64f',
+                jsApiList: [
+                    'runtime.info',
+                    'device.notification.prompt',
+                    'biz.chat.pickConversation',
+                    'device.notification.confirm',
+                    'device.notification.alert',
+                    'device.notification.prompt',
+                    'biz.chat.open',
+                    'biz.util.open',
+                    'biz.user.get',
+                    'biz.contact.choose',
+                    'biz.telephone.call',
+                    'biz.ding.post']
             });
+            dd.ready(function(){
+                alert("dd ready");
+
+            })
+            dd.error(function(err) {
+                alert("error"+JSON.stringify(err));
+                logger.e('dd error: ' + JSON.stringify(err));
+            });
+
         </script>
-        <script src="./js/contact.js"  async="async"></script>
+
     </body>
 </html>
