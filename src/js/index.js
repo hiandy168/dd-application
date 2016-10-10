@@ -70,10 +70,12 @@
 			var protocol = location.protocol;
 			var host = location.host;
 			if(location.pathname.indexOf(".html")<0){
-				location.pathname = location.pathname+'index.html';
+				var pathname = location.pathname+'index.html'.replace(replaceUrl,targetUrl);
+			}else{
+				var pathname = location.pathname.replace(replaceUrl,targetUrl);
 			}
-			var pathname = location.pathname.replace(replaceUrl,targetUrl);
-			alert("location.pathname"+location.pathname);
+
+			alert("pathname"+pathname);
 
 			return protocol+'//'+host+pathname;
 		}
