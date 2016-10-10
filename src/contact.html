@@ -44,7 +44,15 @@
             });
             dd.ready(function(){
                 alert("dd ready");
-
+                $.ajax({
+                    url:apiUrl+'department/list',
+                    dataType:'json',
+                    data:{access_token:access_token},
+                    type:'GET',
+                    success:function(data){
+                        alert(data.department[0].name);
+                    }
+                })
             })
             dd.error(function(err) {
                 alert("error"+JSON.stringify(err));
