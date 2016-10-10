@@ -49,7 +49,7 @@
 			}
 		]
 	};
-
+	alert(111);
 	//模拟数据
 	if(!localStorage.getItem('taskData')){
 		localStorage.setItem('taskData',JSON.stringify(data));
