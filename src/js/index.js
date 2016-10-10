@@ -73,6 +73,7 @@
 				location.pathname = location.pathname+'index.html';
 			}
 			var pathname = location.pathname.replace(replaceUrl,targetUrl);
+			alert("location.pathname"+location.pathname);
 
 			return protocol+'//'+host+pathname;
 		}
