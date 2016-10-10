@@ -210,6 +210,7 @@
 			return levelName;
 		},
 		go:function(page,taskId,taskType){
+			alert("g0");
 			var that = this;
 			if(page=='add'){
 				//这里替换为对应的页面url
@@ -217,6 +218,7 @@
 					url:Util.getTargetUrl('index.html','add.html')
 				});
 				return;
+				alert(Util.getTargetUrl('index.html','add.html'));
 				
 			}else if(page=='detail'){
 				dd.biz.util.openLink({
