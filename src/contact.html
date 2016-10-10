@@ -56,21 +56,19 @@
 //                        alert(JSON.stringify(data));
 //                    }
 //                })
-                dd.runtime.info({
-                    onSuccess: function(result) {
-                        /*{
-                         ability: '0.0.2' //容器版本，用来标识JSAPI能力，可根据该版本来决定能否使用jsapi
-                         }*/
+//                dd.runtime.info({
+//                    onSuccess: function(result) {
+//
 //                        console.log(JSON.stringify(result));
-                        alert(JSON.stringify(result));
-                    },
-                    onFail : function(err) {
-                        alert(JSON.stringify(err));
-
-
-                    }
-
-                });
+//                        alert(JSON.stringify(result));
+//                    },
+//                    onFail : function(err) {
+//                        alert(JSON.stringify(err));
+//
+//
+//                    }
+//
+//                });
 //                获取免登授权码
                 dd.runtime.permission.requestAuthCode({
                     corpId: corpId,
