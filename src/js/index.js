@@ -75,8 +75,6 @@
 				var pathname = location.pathname.replace(replaceUrl,targetUrl);
 			}
 
-			alert("pathname"+pathname);
-
 			return protocol+'//'+host+pathname;
 		}
 
@@ -220,7 +218,6 @@
 			var that = this;
 			if(page=='add'){
 				//这里替换为对应的页面url
-				alert(Util.getTargetUrl('index.html','add.html'));
 				dd.biz.util.openLink({
 					url:Util.getTargetUrl('index.html','add.html')
 				});
