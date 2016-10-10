@@ -43,7 +43,7 @@
                     'biz.ding.post']
             });
             dd.ready(function(){
-                alert("dd ready");
+                alert("dd ready11");
 //                $.ajax({
 //                    url:apiUrl+'department/list',
 //                    dataType:'json',
@@ -61,9 +61,11 @@
                         /*{
                          ability: '0.0.2' //容器版本，用来标识JSAPI能力，可根据该版本来决定能否使用jsapi
                          }*/
-                        console.log(JSON.stringify(result));
+//                        console.log(JSON.stringify(result));
+                        alert(JSON.stringify(result));
                     },
                     onFail : function(err) {
+                        alert(JSON.stringify(err));
 
 
                     }
@@ -76,22 +78,24 @@
                         /*{
                          code: 'hYLK98jkf0m' //string authCode
                          }*/
-                        alert(result.code);
+                        alert(JSON.stringify(result));
                     },
-                    onFail : function(err) {}
+                    onFail : function(err) {
+                        alert(JSON.stringify(err))
+                    }
 
                 });
-                dd.device.notification.alert({
-                    message: "hello",
-                    title: "我是一个测试应用",//可传空
-                    buttonName: "ok",
-                    onSuccess : function() {
-                        //onSuccess将在点击button之后回调
-                        /*回调*/
-                        alert("ok");
-                    },
-                    onFail : function(err) {}
-                });
+//                dd.device.notification.alert({
+//                    message: "hello",
+//                    title: "我是一个测试应用",//可传空
+//                    buttonName: "ok",
+//                    onSuccess : function() {
+//                        //onSuccess将在点击button之后回调
+//                        /*回调*/
+//                        alert("ok");
+//                    },
+//                    onFail : function(err) {}
+//                });
             })
             dd.error(function(err) {
                 alert("error"+JSON.stringify(err));
