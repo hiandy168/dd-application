@@ -68,6 +68,7 @@
 //                    }
 //
 //                });
+
 //                获取免登授权码
                 dd.runtime.permission.requestAuthCode({
                     corpId: corpId,
@@ -95,7 +96,7 @@
                 });
             })
             dd.error(function(err) {
-                alert("error"+JSON.stringify(err));
+                alert("dderror"+JSON.stringify(err));
                 logger.e('dd error: ' + JSON.stringify(err));
             });
 
