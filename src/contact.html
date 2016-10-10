@@ -76,10 +76,22 @@
                         /*{
                          code: 'hYLK98jkf0m' //string authCode
                          }*/
+                        alert(result.code);
                     },
                     onFail : function(err) {}
 
-                })
+                });
+                dd.device.notification.alert({
+                    message: "hello",
+                    title: "我是一个测试应用",//可传空
+                    buttonName: "ok",
+                    onSuccess : function() {
+                        //onSuccess将在点击button之后回调
+                        /*回调*/
+                        alert("ok");
+                    },
+                    onFail : function(err) {}
+                });
             })
             dd.error(function(err) {
                 alert("error"+JSON.stringify(err));
