@@ -21,12 +21,13 @@
         <script src="./js/fastclick.js"></script>
         <script src="./js/config.js"></script>
         <script type="text/javascript">
+            console.log( new Date().getTime());
             dd.config({
                 agentId: agentId,
                 corpId: corpId,
                 timeStamp: timeStamp,
                 nonceStr: nonceStr,
-                signature: 'f1bf58b0bffad7c44661ac15a2788ad8cf563eb7',
+                signature: '0de39468fdcefb32f78bc3b3e2dfe5043fbded40',
                 jsApiList: [
                     'runtime.info',
                     'device.notification.prompt',
@@ -42,7 +43,7 @@
                     'biz.ding.post']
             });
             dd.ready(function(){
-                alert("dd ready22");
+                alert("dd ready");
 //                $.ajax({
 //                    url:apiUrl+'department/list',
 //                    dataType:'json',
