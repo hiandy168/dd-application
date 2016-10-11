@@ -38,25 +38,14 @@
 <script src="//g.alicdn.com/ilw/cdnjs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//g.alicdn.com/ilw/ding/0.6.2/scripts/dingtalk.js"></script>
 <script src="./js/fastclick.js"></script>
+<script src="./js/config.js"></script>
 <script type="text/javascript">
-
-    //文档见http://open.dingtalk.com/doc/#权限验证配置-beta
-//
-//    dd.config({
-//        agentId: '43790978', // 必填，微应用ID
-//        corpId: 'ding837885825c9bc4b3',//必填，企业ID
-//        timeStamp: '1440678945', // 必填，生成签名的时间戳
-//        nonceStr: 'abcdefg', // 必填，生成签名的随机串
-//        signature: '750d0719eeb810f6fa12b04d87d0d7789c4bc64f', // 必填，签名
-//        jsApiList: ['ui.pullToRefresh.enable', 'ui.pullToRefresh.stop', 'biz.util.openLink', 'biz.navigation.setLeft', 'biz.navigation.setTitle', 'biz.navigation.setRight'] // 必填，需要使用的jsapi列表
-//    });
-    var corpId = "ding837885825c9bc4b3";
     dd.config({
-        agentId: '43790978',
-        corpId: corpId,
-        timeStamp: '1440678945',
-        nonceStr: 'abcdefg',
-        signature: '62e691a83a1581943ae4cbd300a6c22ca188f23d',
+        agentId: '',
+        corpId: '',
+        timeStamp: '',
+        nonceStr: '',
+        signature: '',
         jsApiList: [
             'runtime.info',
             'device.notification.prompt',
@@ -71,23 +60,32 @@
             'biz.telephone.call',
             'biz.ding.post']
     });
-    dd.userid=0;
     dd.ready(function() {
-        logger.i('dd.ready rocks!');
+        console.log('dd.ready rocks!');
 
         dd.runtime.info({
             onSuccess: function(info) {
-                logger.i('runtime info: ' + JSON.stringify(info));
+                console.log('runtime info: ' ,JSON.stringify(info));
             },
             onFail: function(err) {
-                logger.e('fail: ' + JSON.stringify(err));
+                console.log('fail: ', JSON.stringify(err));
             }
+        });
+        dd.device.notification.alert({
+            message: "hello",
+            title: "我是一个测试用例",//可传空
+            buttonName: "开始吧！",
+            onSuccess : function() {
+                //onSuccess将在点击button之后回调
+                /*回调*/
+            },
+            onFail : function(err) {}
         });
 
     });
 
     dd.error(function(err) {
-        logger.e('dd error: ' + JSON.stringify(err));
+        console.log('dd error: ' , JSON.stringify(err));
     });
 </script>
 <script src="./js/index.js" async="async"></script>
